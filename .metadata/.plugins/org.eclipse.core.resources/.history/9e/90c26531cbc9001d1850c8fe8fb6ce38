@@ -1,6 +1,0 @@
-package Uninter;
-
-public class Real extends Moeda {
-	
-
-}
