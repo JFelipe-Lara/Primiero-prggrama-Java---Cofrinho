@@ -1,0 +1,17 @@
+package Uninter;
+
+public class Euro extends Moeda{
+	
+	public Euro(double valorIncial) {
+		this.valor = valorIncial;  
+	}
+	
+	public void info() {
+		System.out.println("€ " + valor);
+	}
+	
+	public double converter() {
+		return this.valor * 5.65; //convertendo euro para real
+	}
+
+}

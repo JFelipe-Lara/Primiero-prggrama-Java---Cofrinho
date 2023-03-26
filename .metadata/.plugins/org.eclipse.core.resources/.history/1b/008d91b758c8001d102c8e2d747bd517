@@ -1,0 +1,111 @@
+package Uninter;
+
+import java.util.Scanner;
+
+public class Menu {
+	
+	private Scanner sc;
+	private Cofrinho cofre;
+	
+	public Menu() {
+		sc = new Scanner(System.in);
+		cofre = new Cofrinho();
+		
+	}
+	
+	public void exibirMenurincipal () {
+		System.out.println("Cofrinho:");
+		System.out.println("1- Adicionar moeda:");
+		System.out.println("2- Remover moeda:");
+		System.out.println("3- Listar moedas:");
+		System.out.println("4- Calcular  valor total convertida para real:");
+		System.out.println("0- Encerrar ");
+		
+		String opcaoSelecionada = sc.next();
+		
+		switch(opcaoSelecionada) {
+			case "0":
+				System.out.println("Sistema fechado!");
+				break;
+				
+			case "1":
+				exibirSubMenuAdicionarMoedas();	
+				exibirMenurincipal();
+				break;
+				
+			case "2":
+				exibirSubMenuRemoverMoedas();	
+				exibirMenurincipal();
+				break;
+				
+			case "3":
+				cofre.listagemMoedas();
+				exibirMenurincipal();
+				break;
+				
+			case "4":
+				double valorTotalConvertido = cofre.totalConvertido();
+				String valorTotalConvertidoTexto = String.format("%.2f", valorTotalConvertido);
+				valorTotalConvertidoTexto = valorTotalConvertidoTexto.replace(".", ",");
+				System.out.println("O valor total convertido para real? " + valorTotalConvertido);
+				exibirMenurincipal();
+				break;
+				
+			default:
+				System.out.println("Opção inválida!");
+				exibirMenurincipal();
+				break;
+		}
+		
+	}
+	
+	private void exibirSubMenuAdicionarMoedas() {
+		System.out.println("Escolha uma moeda:");
+		System.out.println("1- Real:");
+		System.out.println("2- Dolar:");
+		System.out.println("3- Euro:");
+		int numeroMoeda = sc.nextInt();
+		
+		System.out.println("Digite o valor:");
+		String valorescritaMoeda = sc.next();
+		valorescritaMoeda = valorescritaMoeda.replace(",",".");				
+		double valorMoeda = Double.valueOf(valorescritaMoeda);
+		
+		if (numeroMoeda == 1){
+			Real moeda = new Real(numeroMoeda);
+			cofre.adicionar(moeda);
+		}else if (numeroMoeda == 2) {
+			Dolar moeda = new Dolar(numeroMoeda);
+			cofre.adicionar(moeda);
+		}else if(numeroMoeda == 3){
+			Euro moeda = new Euro(numeroMoeda);
+			cofre.adicionar(moeda);
+			System.out.println("Moeda adicionada!");
+		}
+	}
+	
+	private void exibirSubMenuRemoverMoedas() {
+		System.out.println("Escolha uma moeda:");
+		System.out.println("1- Real:");
+		System.out.println("2- Dolar:");
+		System.out.println("3- Euro:");
+		int numeroMoeda = sc.nextInt();
+		
+		System.out.println("Digite o valor:");
+		String valorescritaMoeda = sc.next();
+		valorescritaMoeda = valorescritaMoeda.replace(",",".");				
+		double valorMoeda = Double.valueOf(valorescritaMoeda);
+		
+		if (numeroMoeda == 1){
+			Real moeda = new Real(numeroMoeda);
+			cofre.adicionar(moeda);
+		}else if (numeroMoeda == 2) {
+			Dolar moeda = new Dolar(numeroMoeda);
+			cofre.adicionar(moeda);
+		}else if(numeroMoeda == 3){
+			Euro moeda = new Euro(numeroMoeda);
+			cofre.remover(moeda);
+		}
+	}
+	
+}

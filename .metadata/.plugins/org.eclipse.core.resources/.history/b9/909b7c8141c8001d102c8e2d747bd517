@@ -1,0 +1,13 @@
+package Uninter;
+
+public class Dolar extends Moeda{
+	
+	public void info() {
+		System.out.println("US$ - " + valor);
+	}
+	
+	public double converter() {
+		return this.valor * 5.24;
+	}
+
+}

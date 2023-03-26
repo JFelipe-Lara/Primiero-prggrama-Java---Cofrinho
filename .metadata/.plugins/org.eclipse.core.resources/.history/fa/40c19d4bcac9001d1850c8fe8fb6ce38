@@ -1,0 +1,16 @@
+package Uninter;
+
+public class Menu {
+	
+	public void exibirMenuPrincipal() {
+		System.out.println("Escolha uma das opções abaixo:");
+		System.out.println("Cofrinho");
+		System.out.println("1- Adicionar moeda");
+		System.out.println("2- Remover moeda:");
+		System.out.println("3- Listar moedas:");
+		System.out.println("4- Calcular total convertido para real:");
+		System.out.println("0- Encerrar:");
+		
+	}
+
+}

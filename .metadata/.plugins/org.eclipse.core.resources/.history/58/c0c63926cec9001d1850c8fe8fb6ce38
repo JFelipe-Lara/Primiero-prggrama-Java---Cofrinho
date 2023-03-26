@@ -1,0 +1,9 @@
+package Uninter;
+
+import java.util.ArrayList;
+
+public class Cofrinho {
+	
+	private ArrayList<Moeda> listaMoedas;
+
+}

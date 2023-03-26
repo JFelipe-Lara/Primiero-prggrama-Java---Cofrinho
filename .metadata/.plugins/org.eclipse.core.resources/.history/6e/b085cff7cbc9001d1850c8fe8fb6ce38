@@ -1,0 +1,18 @@
+package Uninter;
+
+public class Real extends Moeda {
+
+	@Override
+	public void info() {
+		System.out.println("Rela - " + valor);
+		
+	}
+
+	@Override
+	public void converter() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

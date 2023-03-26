@@ -1,0 +1,16 @@
+package Uninter;
+
+public class Dolar extends Moeda{
+
+	@Override
+	public void info() {
+		System.out.println("Dolar - " + valor);
+		
+	}
+
+	@Override
+	public double converter() {
+		return this.valor * 5.3;
+	}
+
+}
